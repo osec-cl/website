@@ -31,9 +31,30 @@ const universities: Uni[] = [
 ---
 
 <Layout>
-  <main class="mx-auto mt-20 flex w-fit flex-col items-center gap-10">
-    <h1 class="text-7xl font-semibold">OSEC</h1>
-    <img src="/osec_logo.svg" alt="osec logo" class="size-32" />
+  <main class="mx-auto flex w-fit flex-col items-center gap-10">
+    <nav class="mt-2 flex w-full items-center justify-around">
+      <h1 class="text-4xl font-semibold">OSEC</h1>
+      <span class="flex items-center gap-2">
+        <button class="h-fit rounded-lg bg-blue-600 px-4 py-2 text-white"
+          >Proyectos</button
+        >
+        <img src="/github_logo.svg" alt="" class="size-12" />
+      </span>
+    </nav>
+
+    <article class="w-1/2 text-center mt-20">
+      <h2 class="text-4xl font-semibold">
+        Open Source <br />
+        <p class="text-blue-600">Estudiantes de Chile</p>
+      </h2>
+      <p class="text-2xl">
+        Iniciativa inter-universitaria en la que estudiantes de carreras
+        asociadas a la computación puedan colaborar en proyectos de código
+        abierto
+      </p>
+    </article>
+
+    <h2 class="text-4xl mt-20">Participantes</h2>
     <div class="flex gap-4">
       {
         universities.map((uni: Uni) => (
@@ -56,12 +77,5 @@ const universities: Uni[] = [
         ))
       }
     </div>
-    <article class="w-1/2 text-center text-4xl">
-      <p>
-        osec es un esfuerzo inter-unviersitario en unir a los pregrados de
-        ciencias de la computación en la iniciativa open source, esto mediante
-        proyectos en beneficio de todas las unviersidades
-      </p>
-    </article>
   </main>
 </Layout>
