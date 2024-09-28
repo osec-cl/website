@@ -1,4 +1,5 @@
 ---
+import CallToAction from "@components/CallToAction.astro";
 import Layout from "@components/layout.astro";
 
 type Uni = {
@@ -10,19 +11,19 @@ type Uni = {
 
 const universities: Uni[] = [
   {
-    name: "usach",
+    name: "USACH",
     logo_uni: "/img/usach.png",
     logo_os: "/img/osusach.png",
     link: "https://osec.cl/usach-redirect.html",
   },
   {
-    name: "puc",
+    name: "PUC",
     logo_uni: "/img/puc.png",
     logo_os: "/img/osuc.png",
     link: "https://osec.cl/puc-redirect.html",
   },
   {
-    name: "uch",
+    name: "UCH",
     logo_uni: "/placeholder.svg",
     logo_os: "/placeholder.svg",
     link: "https://osec.cl/uch-redirect.html",
@@ -31,51 +32,63 @@ const universities: Uni[] = [
 ---
 
 <Layout>
-  <main class="mx-auto flex w-fit flex-col items-center gap-10">
+  <main class="mx-auto mb-10 flex w-fit flex-col items-center gap-10">
     <nav class="mt-2 flex w-full items-center justify-around">
       <h1 class="text-4xl font-semibold">OSEC</h1>
-      <span class="flex items-center gap-2">
+      <span class="flex items-center gap-4">
         <button class="h-fit rounded-lg bg-blue-600 px-4 py-2 text-white"
           >Proyectos</button
         >
-        <a href="https://github.com/osec-cl"><img src="/github_logo.svg" alt="" class="size-12"/></a>
+        <a href="https://github.com/osec-cl"
+          ><img src="/github_logo.svg" alt="" class="size-12" /></a
+        >
       </span>
     </nav>
 
-    <article class="w-1/2 text-center mt-20">
-      <h2 class="text-4xl font-semibold">
-        Open Source <br />
-        <p class="text-blue-600">Estudiantes de Chile</p>
+    <section class="mt-20 flex w-2/3 flex-col gap-6 text-center sm:w-1/2">
+      <h2 class="flex flex-col gap-2 text-4xl font-semibold sm:text-6xl">
+        <p>Open Source</p>
+        <p
+          class="bg-gradient-to-r from-[#26A5E4] to-[#5865F2] bg-clip-text text-transparent"
+        >
+          Estudiantes de Chile
+        </p>
       </h2>
-      <p class="text-2xl">
+      <p class="text-balance text-3xl leading-9">
         Iniciativa inter-universitaria en la que estudiantes de carreras
         asociadas a la computación puedan colaborar en proyectos de código
         abierto
       </p>
-    </article>
+    </section>
 
-    <h2 class="text-4xl mt-20">Participantes</h2>
-    <div class="flex gap-4">
-      {
-        universities.map((uni: Uni) => (
-          <a
-            class="flex w-16 flex-col items-center gap-2 border p-4 hover:ring"
-            href={uni.link}
-          >
-            <h2>{uni.name}</h2>
-            <img
-              class="size-full"
-              src={uni.logo_uni}
-              alt={uni.name + " logo"}
-            />
-            <img
-              class="size-full"
-              src={uni.logo_os}
-              alt={uni.name + "os organization logo"}
-            />
-          </a>
-        ))
-      }
-    </div>
+    <section
+      class="flex max-w-[90%] flex-col items-center gap-8 text-center lg:max-w-[70%] xl:max-w-[50%]"
+    >
+      <h2 class="text-semibold mt-20 text-4xl text-blue-500">Participantes</h2>
+      <div class="flex w-full flex-row flex-wrap justify-evenly gap-8">
+        {
+          universities.map((uni: Uni) => (
+            <a
+              class="flex w-[20vw] flex-col items-center gap-4 rounded-xl border border-blue-500 border-opacity-50 bg-blue-500 bg-opacity-10 p-6 hover:ring hover:ring-blue-500 hover:ring-opacity-50 sm:max-w-[30%]"
+              href={uni.link}
+            >
+              <h2 class="text-bold text-xl">{uni.name}</h2>
+              <img
+                class="size-full"
+                src={uni.logo_uni}
+                alt={uni.name + " logo"}
+              />
+              <img
+                class="size-full"
+                src={uni.logo_os}
+                alt={uni.name + "os organization logo"}
+              />
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <CallToAction />
   </main>
 </Layout>
