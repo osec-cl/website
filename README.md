@@ -17,7 +17,9 @@ pnpm run dev
 ```
 
 # Ejecutar prettier:
+
 Para mantener un estilo de código a lo largo de todo el proyecto se requiere que formatees el tu trabajo antes de aportar!
+
 ```bash
 pnpm run format
 ```

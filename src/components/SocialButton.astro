@@ -1,0 +1,7 @@
+---
+const { link, size = 20 } = Astro.props;
+---
+
+<a href={link} class={`rounded-full size-${size}`}>
+  <slot />
+</a>
