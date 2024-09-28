@@ -45,25 +45,31 @@ const universities: Uni[] = [
       </span>
     </nav>
 
-    <section class="mt-20 w-1/2 text-center flex flex-col gap-6">
-      <h2 class="text-6xl font-semibold flex flex-col gap-2">
+    <section class="mt-20 flex w-1/2 flex-col gap-6 text-center">
+      <h2 class="flex flex-col gap-2 text-6xl font-semibold">
         <p>Open Source</p>
-        <p class="bg-gradient-to-r from-[#26A5E4] to-[#5865F2] bg-clip-text text-transparent">Estudiantes de Chile</p>
+        <p
+          class="bg-gradient-to-r from-[#26A5E4] to-[#5865F2] bg-clip-text text-transparent"
+        >
+          Estudiantes de Chile
+        </p>
       </h2>
-      <p class="text-2xl text-balance leading-9">
+      <p class="text-balance text-2xl leading-9">
         Iniciativa inter-universitaria en la que estudiantes de carreras
         asociadas a la computación puedan colaborar en proyectos de código
         abierto
       </p>
     </section>
 
-    <section class="flex flex-col gap-8 text-center items-center md:max-w-[50%]">
-      <h2 class="mt-20 text-4xl text-blue-500 text-semibold">Participantes</h2>
-      <div class="flex gap-8 flex-wrap justify-evenly w-full">
+    <section
+      class="flex flex-col items-center gap-8 text-center md:max-w-[50%]"
+    >
+      <h2 class="text-semibold mt-20 text-4xl text-blue-500">Participantes</h2>
+      <div class="flex w-full flex-wrap justify-evenly gap-8">
         {
           universities.map((uni: Uni) => (
             <a
-              class="flex w-[30%] flex-col items-center gap-4 border p-6 hover:ring rounded-xl bg-blue-500 bg-opacity-10 border-blue-500 border-opacity-50 hover:ring-blue-500 hover:ring-opacity-50"
+              class="flex w-[30%] flex-col items-center gap-4 rounded-xl border border-blue-500 border-opacity-50 bg-blue-500 bg-opacity-10 p-6 hover:ring hover:ring-blue-500 hover:ring-opacity-50"
               href={uni.link}
             >
               <h2 class="text-bold text-xl">{uni.name}</h2>
