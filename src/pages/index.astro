@@ -11,19 +11,19 @@ type Uni = {
 
 const universities: Uni[] = [
   {
-    name: "usach",
+    name: "USACH",
     logo_uni: "/img/usach.png",
     logo_os: "/img/osusach.png",
     link: "https://osec.cl/usach-redirect.html",
   },
   {
-    name: "puc",
+    name: "PUC",
     logo_uni: "/img/puc.png",
     logo_os: "/img/osuc.png",
     link: "https://osec.cl/puc-redirect.html",
   },
   {
-    name: "uch",
+    name: "UCH",
     logo_uni: "/placeholder.svg",
     logo_os: "/placeholder.svg",
     link: "https://osec.cl/uch-redirect.html",
@@ -35,7 +35,7 @@ const universities: Uni[] = [
   <main class="mx-auto mb-10 flex w-fit flex-col items-center gap-10">
     <nav class="mt-2 flex w-full items-center justify-around">
       <h1 class="text-4xl font-semibold">OSEC</h1>
-      <span class="flex items-center gap-2">
+      <span class="flex items-center gap-4">
         <button class="h-fit rounded-lg bg-blue-600 px-4 py-2 text-white"
           >Proyectos</button
         >
@@ -45,41 +45,44 @@ const universities: Uni[] = [
       </span>
     </nav>
 
-    <article class="mt-20 w-1/2 text-center">
-      <h2 class="text-4xl font-semibold">
-        Open Source <br />
-        <p class="text-blue-600">Estudiantes de Chile</p>
+    <section class="mt-20 w-1/2 text-center flex flex-col gap-6">
+      <h2 class="text-6xl font-semibold flex flex-col gap-2">
+        <p>Open Source</p>
+        <p class="bg-gradient-to-r from-[#26A5E4] to-[#5865F2] bg-clip-text text-transparent">Estudiantes de Chile</p>
       </h2>
-      <p class="text-2xl">
+      <p class="text-2xl text-balance leading-9">
         Iniciativa inter-universitaria en la que estudiantes de carreras
         asociadas a la computación puedan colaborar en proyectos de código
         abierto
       </p>
-    </article>
+    </section>
 
-    <h2 class="mt-20 text-4xl">Participantes</h2>
-    <div class="flex gap-4">
-      {
-        universities.map((uni: Uni) => (
-          <a
-            class="flex w-16 flex-col items-center gap-2 border p-4 hover:ring"
-            href={uni.link}
-          >
-            <h2>{uni.name}</h2>
-            <img
-              class="size-full"
-              src={uni.logo_uni}
-              alt={uni.name + " logo"}
-            />
-            <img
-              class="size-full"
-              src={uni.logo_os}
-              alt={uni.name + "os organization logo"}
-            />
-          </a>
-        ))
-      }
-    </div>
+    <section class="flex flex-col gap-8 text-center items-center md:max-w-[50%]">
+      <h2 class="mt-20 text-4xl text-blue-500 text-semibold">Participantes</h2>
+      <div class="flex gap-8 flex-wrap justify-evenly w-full">
+        {
+          universities.map((uni: Uni) => (
+            <a
+              class="flex w-[30%] flex-col items-center gap-4 border p-6 hover:ring rounded-xl bg-blue-500 bg-opacity-10 border-blue-500 border-opacity-50 hover:ring-blue-500 hover:ring-opacity-50"
+              href={uni.link}
+            >
+              <h2 class="text-bold text-xl">{uni.name}</h2>
+              <img
+                class="size-full"
+                src={uni.logo_uni}
+                alt={uni.name + " logo"}
+              />
+              <img
+                class="size-full"
+                src={uni.logo_os}
+                alt={uni.name + "os organization logo"}
+              />
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
     <CallToAction />
   </main>
 </Layout>
